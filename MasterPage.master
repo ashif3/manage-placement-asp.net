@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .container {
+            background-color: #FFF;
+            width: 900px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            border-top-width: 10px;
+            border-right-width: 10px;
+            border-bottom-width: 10px;
+            border-left-width: 10px;
+            border-right-style: double;
+            border-left-style: double;
+            border-top-color: #06C;
+            border-right-color: #06C;
+            border-bottom-color: #06C;
+            border-left-color: #06C;
+        }
+
+        .footer {
+            background-color: #FFF;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 12px;
+            color: #000;
+            border-top-width: medium;
+            border-top-style: solid;
+            border-top-color: #006;
+            width: 840px;
+            text-align: center;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            margin-top: 0px;
+            margin-right: 20px;
+            margin-bottom: 0px;
+            margin-left: 8px;
+        }
+
+        .header {
+            background-color: #FFF;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 0px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            border-bottom-width: medium;
+            border-bottom-style: solid;
+            border-bottom-color: #009;
+        }
+
+        .middle {
+            background-color: #FFF;
+            width: 850px;
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-right: auto;
+            margin-bottom: 5px;
+            margin-left: auto;
+        }
+
+        .menubar {
+            width: 632px;
+            padding-top: 0px;
+            padding-right: 90px;
+            padding-bottom: 5px;
+            padding-left: 120px;
+            height: 30px;
+            text-align: center;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+
+        .textformat {
+            background-color: #CCC;
+            padding: 10px;
+            width: 820px;
+            margin-top: 5px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+        .auto-style1 {
+            text-decoration: none;
+        }
+        .auto-style2 {
+            color: #3333FF;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <img src="img/logo.PNG" width="189" height="97" longdesc="test.html" />
+            </div>
+            <div class="middle">
+                <div class="menubar">
+
+                    <asp:Menu ID="MainMenu" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="X-Large" ForeColor="#E4E4E4" Orientation="Horizontal" StaticDisplayLevels="2">
+                        <DynamicHoverStyle BackColor="Silver" />
+                        <DynamicMenuItemStyle BackColor="#C7C7C7" />
+                        <StaticHoverStyle BackColor="#274F76" />
+                        <StaticMenuItemStyle BackColor="#336699" ForeColor="White" HorizontalPadding="40px" />
+                        <StaticSelectedStyle BackColor="#274F76" ForeColor="White" />
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+                </div>
+                <div class="textformat">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+            <div class="footer">Copyright © 2014 Internshala<br />
+                <a class="auto-style1" href="admin/login.aspx"><span class="auto-style2">Go to Admin Panel</span></a><br />
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

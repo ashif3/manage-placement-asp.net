@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="admin_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .container {
+            background-color: #FFF;
+            width: 900px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            border: 1em solid #000;
+        }
+
+        .header {
+            background-color: #FFF;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 0px;
+            padding-right: 20px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            border-bottom-width: medium;
+            border-bottom-style: solid;
+            border-bottom-color: #999;
+        }
+
+        .middle {
+            background-color: #FFF;
+            width: 850px;
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-right: auto;
+            margin-bottom: 5px;
+            margin-left: auto;
+        }
+
+        .menubar {
+            width: 750px;
+            padding-top: 5px;
+            padding-right: 30px;
+            padding-bottom: 5px;
+            padding-left: 50px;
+            height: 30px;
+            text-align: center;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+
+        .textformat {
+            background-color: #FFF;
+            padding: 10px;
+            width: 820px;
+            margin-top: 10px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+        .auto-style1 {
+            width: 189px;
+            height: 97px;
+        }
+        .auto-style2 {
+            width: 750px;
+            padding-top: 5px;
+            padding-right: 30px;
+            padding-bottom: 5px;
+            padding-left: 50px;
+            height: 26px;
+            text-align: center;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <img alt="" class="auto-style1" src="../img/logo.PNG" /></div>
+            <div class="middle">
+                <div class="auto-style2">
+                    <asp:Menu ID="MenuBarAdmin" runat="server" ForeColor="#6699FF" Orientation="Horizontal">
+                        <DynamicHoverStyle Font-Bold="False" Font-Italic="False" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/admin/Default.aspx" Text="DashBoard" Value="DashBoard"></asp:MenuItem>
+                            <asp:MenuItem Text="Student" Value="Student">
+                                <asp:MenuItem NavigateUrl="~/admin/student-verification.aspx" Text="Student Verification" Value="Student Verification"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/admin/filter-students.aspx" Text="Filter Students" Value="Filter Students"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Company" Value="Company">
+                                <asp:MenuItem NavigateUrl="~/admin/CompanyNotification.aspx" Text="Company Notifications" Value="Company Notifications"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Placement" Value="Placement">
+                                <asp:MenuItem NavigateUrl="~/admin/add-placement-record.aspx" Text="Add Record" Value="Add Record"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/admin/edit-placement-record.aspx" Text="Edit Record" Value="Edit Record"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/admin/newsletter-send.aspx" Text="Newsletter" Value="Newsletter"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/admin/logout.aspx" Text="Logout" Value="Logout"></asp:MenuItem>
+                        </Items>
+                        <StaticMenuItemStyle Font-Bold="True" Font-Size="Large" ForeColor="#336699" HorizontalPadding="25px" ItemSpacing="100px" Font-Italic="False" />
+                        <StaticSelectedStyle ForeColor="#3366FF" />
+                    </asp:Menu>
+                </div>
+                <div class="textformat">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
